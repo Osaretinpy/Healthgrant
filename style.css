@@ -1,0 +1,36 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+* { box-sizing: border-box; transition: background-color .25s ease, color .2s ease, border-color .25s ease; }
+html, body { margin:0; min-height:100%; }
+body { font-family:'Plus Jakarta Sans','Segoe UI',system-ui,sans-serif; }
+button, input, select, textarea { font:inherit; }
+button { -webkit-tap-highlight-color: transparent; }
+a { color:inherit; }
+
+@keyframes fadeSlideUp { from {opacity:0; transform:translateY(20px)} to {opacity:1; transform:translateY(0)} }
+@keyframes heroGrad { 0%{background-position:0% 60%} 50%{background-position:100% 40%} 100%{background-position:0% 60%} }
+@keyframes modalIn { from{opacity:0;transform:scale(.95) translateY(12px)} to{opacity:1;transform:scale(1) translateY(0)} }
+@keyframes spinR { to {transform:rotate(360deg)} }
+@keyframes beatPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
+
+.hsf-card { animation:fadeSlideUp .38s ease both; transition:box-shadow .18s ease,transform .18s ease,background-color .25s ease,border-color .25s ease!important; }
+.hsf-card:hover { transform:translateY(-2px); }
+.hsf-arrow { transition:transform .15s ease!important; }
+.hsf-modal { animation:modalIn .22s ease both; }
+.hsf-spin { animation:spinR .75s linear infinite; }
+.hsf-pulse { animation:beatPulse 1.4s ease infinite; display:inline-block; }
+.hsf-hero { background-size:300% 300%!important; animation:heroGrad 14s ease infinite; }
+
+@media (max-width: 640px) {
+  .nav { padding:0 14px!important; }
+  .nav-brand-sub { display:none; }
+  .nav-add { padding:8px 11px!important; }
+  .hero { padding:42px 14px 60px!important; }
+  .hero-search { flex-wrap:wrap; }
+  .hero-search input { min-width:0; }
+  .hero-search select { width:100%; }
+  .ai-row { align-items:stretch!important; }
+  .ai-input-row { min-width:100%!important; }
+  .form-grid { grid-template-columns:1fr!important; }
+}
